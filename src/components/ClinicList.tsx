@@ -23,17 +23,17 @@ const ClinicList = () => {
     const mockClinics: Clinic[] = [
       {
         id: '1',
-        name: 'City Vet Clinic',
-        address: '123 Main St, Anytown',
+        name: 'Clínica Veterinária da Cidade',
+        address: '123 Rua Principal, Anycidade',
         contact: '555-1234',
-        services: 'General check-ups, vaccinations',
+        services: 'Consultas gerais, vacinações',
       },
       {
         id: '2',
-        name: 'Pet Health Center',
-        address: '456 Oak Ave, Anytown',
+        name: 'Centro de Saúde Animal',
+        address: '456 Avenida Carvalho, Anycidade',
         contact: '555-5678',
-        services: 'Dental care, surgery',
+        services: 'Tratamento dentário, cirurgia',
       },
     ];
 
@@ -70,7 +70,7 @@ const ClinicList = () => {
   }
 
   if (!clinics) {
-    return <p>No clinics registered.</p>;
+    return <p>Nenhuma clínica registrada.</p>;
   }
 
   return (
@@ -82,8 +82,8 @@ const ClinicList = () => {
             <CardDescription>{clinic.address}</CardDescription>
           </CardHeader>
           <CardContent>
-            <p>Services: {clinic.services}</p>
-            <Link href={`/clinics/${clinic.id}`}>View Details</Link>
+            <p>Serviços: {clinic.services}</p>
+            <Link href={`/clinics/${clinic.id}`}>Ver Detalhes</Link>
           </CardContent>
         </Card>
       ))}

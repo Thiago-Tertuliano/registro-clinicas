@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Clinic Register',
-  description: 'A simple clinic registration application.',
+  title: 'Registro de Clínicas',
+  description: 'Um aplicativo simples de registro de clínicas.',
 };
 
 export default function RootLayout({
@@ -24,11 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
   );
 }
-

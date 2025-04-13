@@ -2,7 +2,7 @@
 import ClinicRegistrationForm from '@/components/ClinicRegistrationForm';
 
 const EditClinicPage = ({ params }: { params: { id: string } }) => {
-  // TODO: Fetch clinic data based on params.id and pre-populate the form
+  // TODO: Buscar dados da clínica com base em params.id e preencher o formulário
   return (
     <div>
       <ClinicRegistrationForm />

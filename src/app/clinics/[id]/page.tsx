@@ -17,42 +17,42 @@ const ClinicDetailsPage = ({ params }: { params: { id: string } }) => {
   // Mock clinic data
   const clinic: Clinic = {
     id: params.id,
-    name: "Mock Clinic",
-    address: "123 Fake Street, Faketown",
+    name: "Clínica Mock",
+    address: "123 Rua Falsa, Cidadetown",
     contact: "555-555-5555",
-    services: "Mock services provided here.",
+    services: "Serviços mock fornecidos aqui.",
   };
 
   return (
     <div className="container mx-auto py-10">
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle>Clinic Details</CardTitle>
+          <CardTitle>Detalhes da Clínica</CardTitle>
           <div className="space-x-2">
             <Link href={`/clinics/${clinic.id}/edit`}>
               <Button variant="outline" size="sm">
                 <Edit className="mr-2 h-4 w-4" />
-                Edit
+                Editar
               </Button>
             </Link>
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button variant="destructive" size="sm">
                   <Trash2 className="mr-2 h-4 w-4" />
-                  Delete
+                  Excluir
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogTitle>Tem certeza absoluta?</AlertDialogTitle>
                   <AlertDialogDescription>
-                    This action cannot be undone. This will permanently delete the clinic from our
-                    servers.
+                    Esta ação não pode ser desfeita. Isso irá excluir permanentemente a clínica dos nossos
+                    servidores.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                  <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction>Continue</AlertDialogAction>
+                  <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                  <AlertDialogAction>Continuar</AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
@@ -60,19 +60,19 @@ const ClinicDetailsPage = ({ params }: { params: { id: string } }) => {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-1">
-            <h2 className="text-lg font-semibold">Name</h2>
+            <h2 className="text-lg font-semibold">Nome</h2>
             <p>{clinic.name}</p>
           </div>
           <div className="space-y-1">
-            <h2 className="text-lg font-semibold">Address</h2>
+            <h2 className="text-lg font-semibold">Endereço</h2>
             <p>{clinic.address}</p>
           </div>
           <div className="space-y-1">
-            <h2 className="text-lg font-semibold">Contact</h2>
+            <h2 className="text-lg font-semibold">Contato</h2>
             <p>{clinic.contact}</p>
           </div>
           <div className="space-y-1">
-            <h2 className="text-lg font-semibold">Services</h2>
+            <h2 className="text-lg font-semibold">Serviços</h2>
             <p>{clinic.services}</p>
           </div>
         </CardContent>

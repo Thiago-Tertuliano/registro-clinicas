@@ -20,16 +20,16 @@ import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: "Clinic name must be at least 2 characters.",
+    message: "O nome da clínica deve ter pelo menos 2 caracteres.",
   }),
   address: z.string().min(10, {
-    message: "Address must be at least 10 characters.",
+    message: "O endereço deve ter pelo menos 10 caracteres.",
   }),
   contact: z.string().min(7, {
-    message: "Contact number must be at least 7 characters.",
+    message: "O número de contato deve ter pelo menos 7 caracteres.",
   }),
   services: z.string().min(10, {
-    message: "Please provide a brief description of the services offered.",
+    message: "Por favor, forneça uma breve descrição dos serviços oferecidos.",
   }),
 });
 
@@ -53,8 +53,8 @@ const ClinicRegistrationForm = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: "Clinic registered!",
-      description: "Your clinic has been successfully registered.",
+      title: "Clínica registrada!",
+      description: "Sua clínica foi registrada com sucesso.",
     });
 
     setIsSubmitting(false);
@@ -63,7 +63,7 @@ const ClinicRegistrationForm = () => {
 
   return (
     <div className="container mx-auto py-10">
-      <h1 className="text-2xl font-bold mb-6">Clinic Registration</h1>
+      <h1 className="text-2xl font-bold mb-6">Registro de Clínica</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -71,12 +71,12 @@ const ClinicRegistrationForm = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Clinic Name</FormLabel>
+                <FormLabel>Nome da Clínica</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter clinic name" {...field} />
+                  <Input placeholder="Insira o nome da clínica" {...field} />
                 </FormControl>
                 <FormDescription>
-                  This is the name that will be displayed on the clinic listing.
+                  Este é o nome que será exibido na listagem de clínicas.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -87,12 +87,12 @@ const ClinicRegistrationForm = () => {
             name="address"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Address</FormLabel>
+                <FormLabel>Endereço</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter clinic address" {...field} />
+                  <Input placeholder="Insira o endereço da clínica" {...field} />
                 </FormControl>
                 <FormDescription>
-                  Full street address of the clinic.
+                  Endereço completo da clínica.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -103,12 +103,12 @@ const ClinicRegistrationForm = () => {
             name="contact"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Contact Number</FormLabel>
+                <FormLabel>Número de Contato</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter contact number" {...field} />
+                  <Input placeholder="Insira o número de contato" {...field} />
                 </FormControl>
                 <FormDescription>
-                  The main contact number for the clinic.
+                  O número de contato principal da clínica.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -119,23 +119,23 @@ const ClinicRegistrationForm = () => {
             name="services"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Services Offered</FormLabel>
+                <FormLabel>Serviços Oferecidos</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Describe the services offered by the clinic"
+                    placeholder="Descreva os serviços oferecidos pela clínica"
                     className="resize-none"
                     {...field}
                   />
                 </FormControl>
                 <FormDescription>
-                  A brief description of the services provided by the clinic.
+                  Uma breve descrição dos serviços prestados pela clínica.
                 </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
           <Button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Registering..." : "Register Clinic"}
+            {isSubmitting ? "Registrando..." : "Registrar Clínica"}
           </Button>
         </form>
       </Form>
